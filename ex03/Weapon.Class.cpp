@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.Class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babels <babels@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:15:53 by babels            #+#    #+#             */
-/*   Updated: 2023/11/28 16:17:36 by babels           ###   ########.fr       */
+/*   Updated: 2023/12/19 14:35:19 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Weapon::~Weapon(void)
 
 void Weapon::setType(std::string type)
 {
+    std::cout << "Weapon type changed to " << type << std::endl;
     this->_type = type;
     return ;
 }

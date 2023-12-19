@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Replace.Class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babels <babels@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:54:29 by babels            #+#    #+#             */
-/*   Updated: 2023/12/11 14:40:17 by babels           ###   ########.fr       */
+/*   Updated: 2023/12/19 14:40:43 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Replace::~Replace(void)
 
 void	Replace::replace_line(void)
 {
-	std::ifstream 	file(this->_filename);
+	std::ifstream 	file(this->_filename.c_str());
 	std::string 	buffer;
 
 	std::getline(file, buffer);
@@ -59,14 +59,13 @@ void	Replace::change_occ(void)
 		this->_line.erase(index, this->_s1.length());
 		this->_line.insert(index, this->_s2);
 		index = this->_line.find(this->_s1, index + this->_s2.length());
-		std::cout << index << std::endl;
 	}
 	return ;
 }
 
 void	Replace::write_file(void)
 {
-	std::ofstream	ofs(this->_filename.insert(this->_filename.length(),".replace"));
+	std::ofstream	ofs(this->_filename.insert(this->_filename.length(),".replace").c_str());
 
 	ofs << this->_line;
 	ofs.close();

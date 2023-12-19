@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: babels <babels@student.42.fr>              +#+  +:+       +#+         #
+#    By: aabel <aabel@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 20:38:45 by babels            #+#    #+#              #
-#    Updated: 2023/11/29 12:06:38 by babels           ###   ########.fr        #
+#    Updated: 2023/12/19 14:37:08 by aabel            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,16 @@ SOURCES = main.cpp Replace.Class.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 
 %.o: %.c++
-	$(CC) -c $(CFLAGS) -g3 $< -o $@ -I
+	$(CXX) -c $(CXXFLAGS) -g3 $< -o $@ -I
 
 ${NAME}: ${OBJECTS}
-	$(CC) $(CFLAGS) -g3 -o ${NAME} ${OBJECTS}
+	$(CXX) $(CXXFLAGS) -g3 -o ${NAME} ${OBJECTS}
 
 clean:
 	rm -f ${OBJECTS}

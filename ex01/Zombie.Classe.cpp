@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.Classe.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babels <babels@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aabel <aabel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:27:36 by babels            #+#    #+#             */
-/*   Updated: 2023/11/28 14:35:55 by babels           ###   ########.fr       */
+/*   Updated: 2023/12/19 14:07:12 by aabel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void    Zombie::talking(void)
 void    Zombie::setName(std::string name)
 {
     this->_name = name;
+    return ;
 }
